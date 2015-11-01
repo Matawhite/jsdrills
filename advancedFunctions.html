@@ -16,28 +16,38 @@ var myArray = ['sun', 'moon', 'star'];
 var myObj = {
     name: 'Matt',
     married: true,
-    city: 'Austin'};
+    city: 'Austin'}
 
 
 function combo(collection,callback ){
     if(collection.constructor === Array){
     
     for(i = 0; i < collection.length; i++){
-        callback(collection[i]);
+        callback(collection[i])
     }
     }else{for(x in collection){
-        callback(collection[x]);
-    	}
-	}
+        callback(collection[x])
+    }}
    
 };
 
-combo(myArray,function(data){
-console.log(data)
-});
-combo(myObj, function(data){
-console.log(data)
-});
+function myMap(collection,callback){
+    var mapped = [];
+    combo(collection,function(data){
+         mapped.push(callback(data))
+    })
+    return mapped;
+}
+
+//running the code
+
+combo(myArray,function(data){console.log(data)})
+combo(myObj, function(data){console.log(data)})
+
+myMap(myArray,function(data){console.log(data)})
+myMap(myObj,function(data){console.log(data)})
+
+
 </pre>
  	</div>
  </body>
