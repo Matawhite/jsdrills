@@ -10,6 +10,35 @@
  	<div class='container'>
  		<h2>Advanced Functions</h2>
  		<hr>
+ 		<pre>
+var myArray = ['sun', 'moon', 'star'];
+
+var myObj = {
+    name: 'Matt',
+    married: true,
+    city: 'Austin'};
+
+
+function combo(collection,callback ){
+    if(collection.constructor === Array){
+    
+    for(i = 0; i < collection.length; i++){
+        callback(collection[i]);
+    }
+    }else{for(x in collection){
+        callback(collection[x]);
+    	}
+	}
+   
+};
+
+combo(myArray,function(data){
+console.log(data)
+});
+combo(myObj, function(data){
+console.log(data)
+});
+</pre>
  	</div>
  </body>
  </html>
