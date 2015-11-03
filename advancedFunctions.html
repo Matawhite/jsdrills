@@ -10,7 +10,9 @@
  	<div class='container'>
  		<h2>Advanced Functions</h2>
  		<hr>
+ 		<div class='code'>
  		<pre>
+
 var myArray = ['sun', 'moon', 'star'];
 
 var myObj = {
@@ -19,7 +21,7 @@ var myObj = {
     city: 'Austin'}
 
 
-function combo(collection,callback ){
+function myEach(collection,callback ){
     if(collection.constructor === Array){
     
     for(i = 0; i < collection.length; i++){
@@ -33,7 +35,7 @@ function combo(collection,callback ){
 
 function myMap(collection,callback){
     var mapped = [];
-    combo(collection,function(data){
+    myEach(collection,function(data){
          mapped.push(callback(data))
     })
     return mapped;
@@ -47,8 +49,8 @@ combo(myObj, function(data){console.log(data)})
 myMap(myArray,function(data){console.log(data)})
 myMap(myObj,function(data){console.log(data)})
 
-
 </pre>
+		</div>
  	</div>
  </body>
  </html>
