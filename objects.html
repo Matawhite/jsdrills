@@ -10,6 +10,69 @@
  	<div class='container'>
  		<h2>Objects</h2>
  		<hr>
+ 		<p>Create an object that includes your first name, age, city and marital status<em> as a true/false statement.</em></p>
+ 		<ul>	
+ 			<li>Add your country of orgin using dot notation.</li>
+ 			<li>Add your the name of your favorite book using bracket notation.</li>
+ 			<li>Now change the value of first name to your last name in your object.</li>
+ 			<li>Create a for loop that console logs just the properties of your object</li>
+ 			<li>Create a for loop that console logs just the values of your objects </li>
+ 			<li>Check if your object is an array or object. <em>*hint use the contructor method</em></li>
+ 			<li>Lastly, create a constructor function that makes a fantasy hero. The hero should have a name, a weapon, a race and function that strikes with the weapon.</li>
+
+
+ 		</ul>
  	</div>
  </body>
+ <script type="text/javascript">
+ 	var me = {
+    firstName: 'Matt',
+    age: 37,
+    city: 'Austin',
+    maritalStatus: true
+};
+
+var meArr = ['Matt', 37, "austin", true]
+
+me.country = 'USA';
+me['favoriteBook'] = 'To Kill a Mocking Bird';
+
+//properties
+for(x in me){
+    console.log([x]);
+}
+//values
+for(x in me){
+    console.log(me[x]);
+}
+//both
+for(x in me){
+    console.log([x] + ': ' + me[x]);
+}
+
+function check(collection){
+    if(collection.constructor == Object){
+        console.log('I am an object')
+        }else{
+            console.log('nope')
+        }
+}
+//run the function
+check(me)
+check(meArr)
+
+function hero(name,weapon,race,strike){
+    this.name = name;
+    this.weapon = weapon;
+    this.race = race;
+    this.strike = function(){
+        console.log(this.name + ' hits you hard with ' + this.weapon)
+    }
+}
+
+var champion = new hero('Isotropic','Axe', 'Orc');
+
+champion.strike()
+
+ </script>
  </html>
